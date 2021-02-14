@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Homepage from './pages/homepage/homepage.page';
-import Contact from './pages/contact/contact.page';
 
+import Contact from './pages/contact/contact.page';
 
 import Hamburger from './components/hamburger/Hamburger.component';
 // import Nav from './components/nav/Nav.component'; // Delete either this or the line above. Also below in the JSX
@@ -14,8 +14,7 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <Hamburger />
-      {/* <Nav /> */}
+      <Header/>
       <Switch>
         <Route exact path="/" component={Homepage} />
         <Route path="/contact" component={Contact}/>
