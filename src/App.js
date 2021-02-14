@@ -5,8 +5,7 @@ import Homepage from './pages/homepage/homepage.page';
 
 import Contact from './pages/contact/contact.page';
 
-import Hamburger from './components/hamburger/Hamburger.component';
-// import Nav from './components/nav/Nav.component'; // Delete either this or the line above. Also below in the JSX
+import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
 
 import './App.css';
