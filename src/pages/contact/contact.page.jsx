@@ -14,7 +14,7 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
     
-        emailjs.sendForm('gmail', 'service_iyo7j7l', e.target, 'user_LKK2kTjNuqABfR8kaZ41y')
+        emailjs.sendForm('service_iyo7j7l', 'template_ky1oume', e.target, 'user_LKK2kTjNuqABfR8kaZ41y')
           .then((result) => {
               console.log(result.text);
           }, (error) => {
@@ -31,12 +31,16 @@ const Contact = () => {
         <div className="contact">
             {sent ? sentAlert : 
                 <form className="contact-form" onSubmit={sendEmail}>
-                    <input type="text" placeholder="name" name="name" />
-                    <input type="email" placeholder="email" name="email" />
-                    <input type="text" placeholder="subject" name="subject" />
-                    <input as="textarea" rows={5} palceholder="message" name="message" />
-                    <input type="submit" value="send message" block />
-                </form>
+                <label>Name</label>
+                <input type="text" name="name" />
+                <label>Subject</label>
+                <input type="text" name="subject" />
+                <label>Email</label>
+                <input type="email" name="email" />
+                <label>Message</label>
+                <textarea name="message" />
+                <input type="submit" value="Send" />
+              </form>
             }
         </div>
     )
