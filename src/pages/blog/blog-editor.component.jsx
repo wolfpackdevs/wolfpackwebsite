@@ -2,28 +2,34 @@ import React from 'react';
 
 import './blog-editor.styles.scss';
 import FormInput from '../../components/form-input/form-input.component';
-import FormArea from '../../components/form-input/form-area.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
+import {Editor} from '@tinymce/tinymce-react';
 class BlogEditor extends React.Component{
     constructor(props){
         super(props);
-
+        console.log(props);
         this.state={
             title:"",
             text:""
-
         }
+        
     }
-    handleChange=event =>{
+    handleChange=(event) =>{
         const {value,name} = event.target;
 
         this.setState({[name]:value})
+        
     }
-
+    handleEditorChange = (content, editor) => {
+        this.setState({text:content});
+      }
     handleSubmit=(event)=> {
+        alert("Posted");
+        
         console.log(this.state);
-
+        
         event.preventDefault();
+        this.props.history.push('/blog');
       }
 
     render(){
@@ -41,16 +47,19 @@ class BlogEditor extends React.Component{
                         required
                     />
                     
+                    <Editor className='editor'
+                        init={{selector: "textarea",
+                        menubar: false,
+                        plugins: "link image code",
+                        toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code'
+                        
+                    }}
+                        apikey="czamjs9g3wawuwcyglksvzgmayz964dxwjuy1tmpe8ibry6p"
+                        name='text'
+                        onEditorChange={this.handleEditorChange}
+                        />
                     
-                    <FormArea
-                        name="text" 
-                        type='area' 
-                        value={this.state.text} 
-                        handleChange={this.handleChange} 
-                        label='Text'
-                        required
-                    />
-
+                    
                     <CustomButton type='submit'>Post</CustomButton>
                 </form>
             </div>
