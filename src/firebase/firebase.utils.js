@@ -3,13 +3,13 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const config = {
-    apiKey: "AIzaSyCe2Ctn5qErHuWuIjuL9vHjcQwbfwjA8fw",
-    authDomain: "wolf-pack-dev.firebaseapp.com",
-    projectId: "wolf-pack-dev",
-    storageBucket: "wolf-pack-dev.appspot.com",
-    messagingSenderId: "475331438544",
-    appId: "1:475331438544:web:fa876b04b0a7c98cd23bd5",
-    measurementId: "G-6KDMESMD9C"
+    apiKey: "AIzaSyCXjdnKl2MYrBP4op9IHgfmkP3V1X-PJUY",
+    authDomain: "wolfpacksite-9b453.firebaseapp.com",
+    projectId: "wolfpacksite-9b453",
+    storageBucket: "wolfpacksite-9b453.appspot.com",
+    messagingSenderId: "605502541502",
+    appId: "1:605502541502:web:0acf4d5a17bcc9792958ef",
+    measurementId: "G-J2NBMHLCJL"
     };
 firebase.initializeApp(config);
 
