@@ -1,11 +1,13 @@
 .hero {
-  background-image: url('../../assets/hero2.jpeg');
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../../assets/hero3.jpg');
+  //   filter: blur(3px);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
+  //   border: 5px solid black;
 }
 
 .hero-content {
@@ -14,4 +16,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  color: white;
+  text-shadow: 1px 1px 3px black;
 }
