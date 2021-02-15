@@ -14,10 +14,12 @@ const App = () => {
   return (
     <div className="App">
       <Header/>
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route path="/contact" component={Contact}/>
-      </Switch>
+        <div className="main">
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route path="/contact" component={Contact}/>
+          </Switch>
+        </div>
       <Foot />
     </div>
   );
