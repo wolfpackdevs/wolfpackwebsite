@@ -1,37 +1,31 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.style.scss';
 
 import { SignInWithGoogle, auth } from '../../firebase/firebase.utils';
 import {ReactComponent as Logo} from '../../assets/wolf_logo.svg';
+
 const Header =({ user }) => (
     <div className='header'>
-         <Link className='logo-container' to="/" >
-            <Logo className='logo' />
-        </Link>
         <div className='options'>
+            <Link className='option' to="/" >
+                home
+            </Link>
             <Link className='option' to='/blog'>
-                BLOG
+                blog
             </Link>
             <Link className='option' to='/about'>
-                ABOUT US
+                about
             </Link>
             <Link className='option' to='/contact'>
-                CONTACT US
+                contact
             </Link>
-           {
-               user ? 
-               <div className='option' onClick={ ()=> auth.signOut()}>sign out</div>
-               :
-               <div className='option' onClick = {SignInWithGoogle}>
-               SIGN IN
-               </div>
-           }
-
         </div>
-
+        {/* horizontal gap in the nav here */}
+        <div className="options">
+            { user ? <div className='option' onClick={ ()=> auth.signOut()}>sign out</div> : <div className='option' onClick = {SignInWithGoogle}>sign in </div> }
+        </div>
     </div>
-
 )
 
 export default Header;
