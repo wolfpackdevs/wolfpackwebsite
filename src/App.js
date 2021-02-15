@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Homepage from './pages/homepage/homepage.page';
-import AnotherPage from './pages/another-page/another-page.page';
-import Header from './components/Header/Header.component.jsx'
-import Hamburger from './components/hamburger/Hamburger.component';
-// import Nav from './components/nav/Nav.component'; // Delete either this or the line above. Also below in the JSX
+
+import Contact from './pages/contact/contact.page';
+
+import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
 
 // import firebase stuff
@@ -30,7 +30,7 @@ const App = () => {
       <Header user={user} />
       <Switch>
         <Route exact path="/" component={Homepage} />
-        <Route path="/another" component={AnotherPage}/>
+        <Route path="/contact" component={Contact}/>
       </Switch>
       <Foot />
     </div>
