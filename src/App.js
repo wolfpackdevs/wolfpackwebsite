@@ -9,7 +9,7 @@ import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
 
 // import firebase stuff
-import {auth} from './firebase/firebase.utils';
+import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 
 import './App.css';
 
@@ -18,13 +18,14 @@ const App = () => {
   
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(setUser);
-    console.log(user);
     return () => {
       unsubscribe();
-      console.log(user);
     };
   }, []);
 
+
+  createUserProfileDocument(user);
+  
   return (
     <div className="App">
       <Header user={user} />
