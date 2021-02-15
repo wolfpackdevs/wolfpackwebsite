@@ -5,6 +5,8 @@ import Homepage from './pages/homepage/homepage.page';
 
 import Contact from './pages/contact/contact.page';
 
+import BlogPage from './pages/blog/blog-page.component';
+
 import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
 
@@ -32,7 +34,8 @@ const App = () => {
         <div className="main">
           <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route path="/contact" component={Contact}/>
+            <Route path="/contact" component={Contact} />
+            <Route path="/Blog" component={BlogPage} />
           </Switch>
         </div>
       <Foot />
