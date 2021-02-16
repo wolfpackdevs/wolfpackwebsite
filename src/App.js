@@ -7,7 +7,9 @@ import Contact from './pages/contact/contact.page';
 
 import BlogPage from './pages/blog/blog-page.component';
 
-import BlogEditor from './pages/blog/blog-editor.component'
+import BlogEditor from './pages/blog/blog-editor.component';
+
+import Admin_Page from './pages/admin/admin.component';
 
 import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
@@ -39,6 +41,7 @@ const App = () => {
             <Route path="/contact" component={Contact} />
             <Route path="/Blog" component={BlogPage} />
             <Route exact path="/edit_Blog" component={BlogEditor} />
+            <Route exact path="/_admin" component={Admin_Page} />
           </Switch>
         </div>
       <Foot />
