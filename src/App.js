@@ -26,8 +26,8 @@ class App extends React.Component {
 
   unsubscribeFromAuth = null;
 
-  componentDidMout(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+  componentDidMount(){
+     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth=> {
       if (userAuth){
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot(snapShot=>{
@@ -39,6 +39,9 @@ class App extends React.Component {
           })
         });
       }
+      else{
+        this.setState({currentUser:userAuth});
+      }
     });
   }
 
@@ -49,7 +52,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <Header user={this.state.currentuUser} />
+        <Header currentUser={this.state.currentUser} />
           <div className="main">
             <Switch>
               <Route exact path="/" component={Homepage} />
