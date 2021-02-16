@@ -32,6 +32,7 @@ export const createUserProfileDocument = async (userAuth, otherData) => {
             console.log('error creating user', error.message);
         }
     }
+    return userRef;
 };
 
 export const auth = firebase.auth();

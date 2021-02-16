@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Homepage from './pages/homepage/homepage.page';
@@ -15,32 +15,51 @@ import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 
 import './App.css';
 
-const App = () => {
-  const [user, setUser] = useState(null);
-  
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(setUser);
-    return () => {
-      unsubscribe();
+class App extends React.Component {
+  constructor (){
+    super ();
+
+    this.state = {
+      currentUser: null 
     };
-  }, []);
+  }
 
+  unsubscribeFromAuth = null;
 
-  createUserProfileDocument(user);
-  
-  return (
-    <div className="App">
-      <Header user={user} />
-        <div className="main">
-          <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/Blog" component={BlogPage} />
-          </Switch>
-        </div>
-      <Foot />
-    </div>
-  );
+  componentDidMout(){
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth){
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot(snapShot=>{
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          })
+        });
+      }
+    });
+  }
+
+  componentWillUnmount(){
+    this.unsubscribeFromAuth();
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <Header user={this.state.currentuUser} />
+          <div className="main">
+            <Switch>
+              <Route exact path="/" component={Homepage} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/Blog" component={BlogPage} />
+            </Switch>
+          </div>
+        <Foot />
+      </div>
+    );
+  }
 }
-
 export default App;
