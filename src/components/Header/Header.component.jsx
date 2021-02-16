@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+//this is essential for redux
+import { connect } from 'react-redux';
+
 import './Header.style.scss';
 
 import { SignInWithGoogle, auth } from '../../firebase/firebase.utils';
@@ -32,4 +36,9 @@ const Header =({currentUser}) => (
     </div>
 )
 
-export default Header;
+//this calls the state from the the root reducer in the redux store
+const mapStateToProps = (state) =>({
+    currentUser: state.user.currentUser
+});
+//connect is a higher order componet to make this component able to access the redux store
+export default connect(mapStateToProps)(Header);
