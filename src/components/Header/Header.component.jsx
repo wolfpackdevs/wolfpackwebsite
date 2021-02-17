@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+//this is essential for redux
+import { connect } from 'react-redux';
+
 import './Header.style.scss';
 
 import { SignInWithGoogle, auth } from '../../firebase/firebase.utils';
 import {ReactComponent as Logo} from '../../assets/wolf_logo.svg';
 
-const Header =({ user }) => (
+const Header =({currentUser}) => (
     <div className='header'>
         <div className='options'>
             <Link className='option' to="/" >
@@ -23,9 +27,18 @@ const Header =({ user }) => (
         </div>
         {/* horizontal gap in the nav here */}
         <div className="options">
-            { user ? <div className='option' onClick={ ()=> auth.signOut()}>sign out</div> : <div className='option' onClick = {SignInWithGoogle}>sign in </div> }
+            { currentUser ? 
+                <div className='option' onClick={ ()=> auth.signOut()}>sign out</div> 
+                : 
+                <div className='option' onClick = {SignInWithGoogle}>sign in</div> 
+            }
         </div>
     </div>
 )
 
-export default Header;
+//this calls the state from the the root reducer in the redux store
+const mapStateToProps = (state) =>({
+    currentUser: state.user.currentUser
+});
+//connect is a higher order componet to make this component able to access the redux store
+export default connect(mapStateToProps)(Header);
