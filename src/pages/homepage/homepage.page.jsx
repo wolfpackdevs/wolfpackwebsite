@@ -10,13 +10,14 @@ const Homepage = () => {
                 <h3>Creators of Beer Spot</h3>
             </div>
             <div className="team left">
-                <h1>Our Team</h1>
+                
+                <h1 className="title">Our Team</h1>
             </div>
             <div className="blog right">
-                <h1>Blog</h1>
+                <h1 className="title">Blog</h1>
             </div>
             <div className="contact left">
-                <h1>Contact us</h1>
+                <h1 className="title">Contact us</h1>
             </div>
         </div>
     )
