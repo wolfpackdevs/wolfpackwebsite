@@ -40,8 +40,12 @@ p {
 }
 
 .main {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 50%;
+  max-width: 800px;
   margin-top: 70px;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 240px);
 }
 
 @keyframes App-logo-spin {

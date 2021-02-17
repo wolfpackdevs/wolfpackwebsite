@@ -53,13 +53,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-          <div className="main">
             <Switch>
               <Route exact path="/" component={Homepage} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/Blog" component={BlogPage} />
+              <div className="main">
+                  <Route path="/contact" component={Contact} />
+                  <Route path="/Blog" component={BlogPage} />
+              </div>
             </Switch>
-          </div>
         <Foot />
       </div>
     );

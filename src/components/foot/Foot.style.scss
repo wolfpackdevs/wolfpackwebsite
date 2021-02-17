@@ -4,16 +4,25 @@
 .foot {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  height: 100px;
-  flex-shrink: 0;
+  justify-content: space-around;
+  height: auto;
+  background: black;
+  color: white;
+  padding: 20px;
 
   .column {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   .menu {
     display: flex;
     flex-direction: column;
+    padding: 20px;
+
+    .option {
+      text-decoration: none;
+      color: white;
+    }
   }
 }
