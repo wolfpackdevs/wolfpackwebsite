@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-around;
   z-index: 150;
+  top: 0;
   position: fixed;
   color: white;
 
@@ -15,25 +16,23 @@
   }
 
   .options {
-    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin: 10px;
-    background-color: black;
-    color: white;
+    justify-content: space-around;
 
     .option {
       padding: 15px;
       cursor: pointer;
       color: white;
+      text-shadow: 1px 1px 1px black;
+      // background-color: black;
       text-decoration: none;
       transition: 1s;
 
-      &:hover {
-        color: black;
-        background-color: white;
-      }
+      // &:hover {
+      //   color: black;
+      //   background-color: white;
+      // }
     }
   }
 }

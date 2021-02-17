@@ -1,9 +1,50 @@
+.nav,
+.nav-click {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  //   justify-content: flex-start;
+  //   align-items: flex-start;
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+    background: white;
+
+    .option {
+      text-decoration: none;
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
 .nav {
-    background-color: black;
-    color: white;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  z-index: 150;
+  top: 0;
+  position: fixed;
+  .hamburger-icon {
+    fill: white;
+    filter: drop-shadow(2px 2px 6px black);
+    transition: 1s;
+  }
 }
 
 .nav-click {
-    background-color: #c2ffa9;
-    color: white;
+  display: flex;
+  //   height: 50px;
+  align-items: center;
+  z-index: 150;
+  top: 0;
+  position: fixed;
+  .hamburger-icon {
+    fill: black;
+    filter: drop-shadow(2px 2px 6px white);
+    transition: 1s;
+  }
 }
