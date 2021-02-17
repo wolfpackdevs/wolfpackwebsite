@@ -11,6 +11,8 @@ import Contact from './pages/contact/contact.page';
 
 import BlogPage from './pages/blog/blog-page.component';
 
+import BlogEditor from './pages/blog/blog-editor.component'
+
 import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
 
@@ -18,6 +20,7 @@ import Foot from './components/foot/Foot.component';
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 
 import './App.css';
+
 
 class App extends React.Component {
  
