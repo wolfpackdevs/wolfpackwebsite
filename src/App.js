@@ -7,7 +7,7 @@ import Contact from './pages/contact/contact.page';
 
 import BlogPage from './pages/blog/blog-page.component';
 
-// import Hamburger from './components/hamburger/Hamburger.component';
+import Hamburger from './components/hamburger/Hamburger.component';
 import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
 
@@ -26,13 +26,12 @@ const App = () => {
     };
   }, []);
 
-
   createUserProfileDocument(user);
   
   return (
     <div className="App">
-      <Header user={user} />
-      {/* <Hamburger user={user} /> */}
+      {/* <Header user={user} /> */}
+      <Hamburger user={user} />
         <div className="main">
           <Switch>
             <Route exact path="/" component={Homepage} />
