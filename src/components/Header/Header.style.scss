@@ -26,10 +26,11 @@
       color: grey;
       text-decoration: none;
       transition: 1s;
+      font-family: Roboto;
 
       &:hover {
-        color: white;
-        background-color: black;
+        color: rgba(128, 128, 128, 0.6);
+        // background-color: black;
       }
     }
   }

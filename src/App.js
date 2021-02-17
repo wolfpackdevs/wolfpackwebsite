@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 
 import Homepage from './pages/homepage/homepage.page';
-
 import Contact from './pages/contact/contact.page';
 
 import BlogPage from './pages/blog/blog-page.component';
@@ -19,6 +18,7 @@ import Foot from './components/foot/Foot.component';
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 
 import './App.css';
+import Fade from 'react-reveal/Fade';
 
 class App extends React.Component {
  
@@ -53,6 +53,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
+        <Fade>
             <Switch>
               <Route exact path="/" component={Homepage} />
               <div className="main">
@@ -61,6 +62,7 @@ class App extends React.Component {
               </div>
             </Switch>
         <Foot />
+        </Fade>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import './homepage.style.scss';
+import Fade from 'react-reveal/Fade';
 
 const Homepage = () => {
     return(
@@ -9,8 +10,9 @@ const Homepage = () => {
                 <h1>Wolf Pack Developers</h1>
                 <h3>Creators of Beer Spot</h3>
             </div>
+            <Fade>
             <div className="team left">
-                
+
                 <h1 className="title">Our Team</h1>
             </div>
             <div className="blog right">
@@ -19,6 +21,7 @@ const Homepage = () => {
             <div className="contact left">
                 <h1 className="title">Contact us</h1>
             </div>
+            </Fade>
         </div>
     )
 }
