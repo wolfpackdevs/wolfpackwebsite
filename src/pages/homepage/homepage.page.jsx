@@ -5,10 +5,10 @@ const Homepage = () => {
     return(
         <div className="home">
             <div className="hero">
-            </div>
-            <div className="hero-content">
-                <h1>Wolf Pack Developers</h1>
-                <h3>Creators of Beer Spot</h3>
+                <div className="hero-content">
+                    <h1>Wolf Pack Devs</h1>
+                    <h3>Creators of Beer Spot</h3>
+                </div>
             </div>
             <Fade>
             <div className="team left">
