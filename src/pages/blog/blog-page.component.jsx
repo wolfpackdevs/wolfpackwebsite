@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogPreview from './../../components/blog-preview/blog-preview.component';
 import BLOG_DATA from './../../blog.data.jsx';
-import './blog-page.styles';
+import './blog-page.styles.scss';
 
 class BlogPage extends React.Component{
     constructor(props){
