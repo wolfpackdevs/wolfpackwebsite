@@ -4,6 +4,8 @@ import './blog-editor.styles.scss';
 import FormInput from '../../components/form-input/form-input.component';
 import CustomButton from '../../components/custom-button/custom-button.component';
 import {Editor} from '@tinymce/tinymce-react';
+import blog from '../../blog';
+
 class BlogEditor extends React.Component{
     constructor(props){
         super(props);
@@ -54,7 +56,7 @@ class BlogEditor extends React.Component{
                         toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code'
                         
                     }}
-                        apikey="czamjs9g3wawuwcyglksvzgmayz964dxwjuy1tmpe8ibry6p"
+                        apikey={blog}
                         name='text'
                         onEditorChange={this.handleEditorChange}
                         />
