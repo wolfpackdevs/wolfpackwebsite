@@ -9,8 +9,11 @@ import Homepage from './pages/homepage/homepage.page';
 import Contact from './pages/contact/contact.page';
 
 import BlogPage from './pages/blog/blog-page.component';
-import Hamburger from './components/hamburger/Hamburger.component';
-import BlogEditor from './pages/blog/blog-editor.component'
+
+import BlogEditor from './pages/blog/blog-editor.component';
+
+import AdminPage from './pages/admin/admin-page.component';
+
 import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
 
@@ -59,6 +62,8 @@ class App extends React.Component {
               <div className="main">
                   <Route path="/contact" component={Contact} />
                   <Route path="/Blog" component={BlogPage} />
+                  <Route exact path="/edit_Blog" component={BlogEditor} />
+                  <Route exact path="/_admin" component={AdminPage} />
               </div>
             </Switch>
         <Foot />
