@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 
 import Homepage from './pages/homepage/homepage.page';
-
 import Contact from './pages/contact/contact.page';
 
 import BlogPage from './pages/blog/blog-page.component';
@@ -22,6 +21,7 @@ import Foot from './components/foot/Foot.component';
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 
 import './App.css';
+import Fade from 'react-reveal/Fade';
 
 class App extends React.Component {
  
@@ -30,10 +30,10 @@ class App extends React.Component {
   componentDidMount(){
     const { setCurrentUser } = this.props;
 
-     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth=> {
+     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth){
         const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot(snapShot=>{
+        userRef.onSnapshot(snapShot => {
           setCurrentUser({
             currentUser: {
               id: snapShot.id,
@@ -56,16 +56,18 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-          <div className="main">
+        <Fade>
             <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/Blog" component={BlogPage} />
-            <Route exact path="/edit_Blog" component={BlogEditor} />
-            <Route exact path="/_admin" component={AdminPage} />
+              <Route exact path="/" component={Homepage} />
+              <div className="main">
+                  <Route path="/contact" component={Contact} />
+                  <Route path="/Blog" component={BlogPage} />
+                  <Route exact path="/edit_Blog" component={BlogEditor} />
+                  <Route exact path="/_admin" component={AdminPage} />
+              </div>
             </Switch>
-          </div>
         <Foot />
+        </Fade>
       </div>
     );
   }
@@ -75,4 +77,4 @@ const mapDispatchToProps = dispatch =>({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(null,mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

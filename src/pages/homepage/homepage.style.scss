@@ -1,25 +1,20 @@
 .hero {
-  margin-top: -70px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('../../assets/hero3.jpg');
-  //   filter: blur(3px);
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
-  //   border: 5px solid black;
-}
+  display: flex;
 
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  color: white;
-  text-shadow: 1px 1px 3px black;
-  font-size: 36pt;
-  font-family: Roboto;
-  justify-content: left;
+  .hero-content {
+    color: white;
+    font-size: 36pt;
+    padding-left: 20%;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
 }
