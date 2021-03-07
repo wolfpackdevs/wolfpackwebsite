@@ -25,7 +25,7 @@ const Contact = () => {
           }, (error) => {
               console.log(error.text);
           });
-        toggle()
+        toggle();
       }
 
     const sentAlert = () => {
@@ -86,6 +86,7 @@ const Contact = () => {
                         {/* <label>Message</label>
                 <textarea name="message" /> */}
                 <CustomButton type='submit'>Send</CustomButton>
+                <br/>
               </form>
             }
         </div>
