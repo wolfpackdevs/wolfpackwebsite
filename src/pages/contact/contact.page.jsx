@@ -41,7 +41,7 @@ const Contact = () => {
                 <form className="contact-form" onSubmit={sendEmail}>
                 <FormInput 
                         name="name" 
-                        type='text' 
+                        type='text'
                         value={name}
                         handleChange={(event)=>{setName(event.target.value)}}
                         label='Name'
