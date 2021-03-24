@@ -37,6 +37,7 @@ const Contact = () => {
     const [message, setMessage]=useState("");
     return (
         <div className="contact">
+            <h1>Have a project that needs work? We can help!</h1>
             {sent ? sentAlert : 
                 <form className="contact-form" onSubmit={sendEmail}>
                 <FormInput 
