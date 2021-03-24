@@ -7,12 +7,10 @@ import { setCurrentUser } from './redux/user/user.actions';
 
 import Homepage from './pages/homepage/homepage.page';
 import Contact from './pages/contact/contact.page';
-
 import BlogPage from './pages/blog/blog-page.component';
-
 import BlogEditor from './pages/blog/blog-editor.component';
-
 import AdminPage from './pages/admin/admin-page.component';
+import About from './pages/about/about.page';
 
 import Header from './components/Header/Header.component';
 import Foot from './components/foot/Foot.component';
@@ -61,7 +59,8 @@ class App extends React.Component {
               <Route exact path="/" component={Homepage} />
               <div className="main">
                   <Route path="/contact" component={Contact} />
-                  <Route path="/Blog" component={BlogPage} />
+                  <Route path="/blog" component={BlogPage} />
+                  <Route path="/about" component={About} />
                   <Route exact path="/edit_Blog" component={BlogEditor} />
                   <Route exact path="/_admin" component={AdminPage} />
               </div>
